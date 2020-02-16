@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     erb :login
   end
   
+  #create the session
+  post '/login' do
+    
+  end
+  
   get '/signup' do
     erb :signup
   end
