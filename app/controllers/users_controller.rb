@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.authenticate(params[:password])
       session[:user_id] = @user.id #actually logs the user in
       puts session
-      redirect to "/users/#{@users.id}"
+      redirect to "/users/#{@user.id}"
     else
       "Your username and/or password are invalid"
       redirect to '/login'
