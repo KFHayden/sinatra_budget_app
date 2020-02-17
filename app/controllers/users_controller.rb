@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
   
   get '/users/:id' do
-    "Hello #{@user.name}"
+    erb :'/users/show'
   end
   
 end
