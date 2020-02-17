@@ -24,9 +24,12 @@ class UsersController < ApplicationController
   post '/users' do
     if params[:name] != "" && params[:email] != "" && params[:password] != ""
       @user = User.create(params)
+      session[:user_id] = @user.id
+      #or redirect to '/login'
       redirect to "/users/#{@user.id}"
     else
-      
+      redirect to '/login'
+      #stretch goal - create an error page or give an error message
     end
   end
   
