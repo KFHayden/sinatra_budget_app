@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   get '/login' do
-    erb :'/users/login'
+    erb :login
   end
   
   #create the session
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
   
   get '/signup' do
-    erb :'/users/signup'
+    erb :signup
   end
   
   post '/users' do
