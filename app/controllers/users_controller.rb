@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       #or redirect to '/login'
       redirect to "/users/#{@user.id}"
     else
-      redirect to '/login'
+      redirect to '/signup'
       #stretch goal - create an error page or give an error message
     end
   end
