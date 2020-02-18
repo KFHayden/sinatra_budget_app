@@ -17,6 +17,9 @@ class ExpensesController < ApplicationController
     end
   end
   
-  
+  get '/expenses/:id' do
+    @expense = Expense.find(params[:id])
+    erb :'/expenses/show'
+  end
   
 end
