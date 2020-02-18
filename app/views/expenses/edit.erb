@@ -1,7 +1,8 @@
 <h3>Expense Edit Page</h3>
 
-<form method="POST" action="/expenses">
+<form method="POST" action="/expenses/<%= @expense.id %>">
+  <input type="hidden" name="_method" value="patch">
   <label for="category">Expense:</label>
-  <input type="text" name="category" value="<%= @expense.category %>"><br>
+  <input type="textarea" name="category" value="<%= @expense.category %>"><br>
   <input type="submit" value="Edit Expense">
 </form>
