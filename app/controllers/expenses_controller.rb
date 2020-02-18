@@ -27,4 +27,8 @@ class ExpensesController < ApplicationController
     erb :'/expenses/edit'
   end
   
+  patch '/expenses/:id' do
+    "Hello, World!"
+  end
+  
 end
