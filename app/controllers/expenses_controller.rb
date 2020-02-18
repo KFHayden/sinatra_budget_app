@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
     erb :'/expenses/new'
   end
   
-  post '/expenses/new' do
+  post '/expenses' do
     #create new expenses
   end
   
