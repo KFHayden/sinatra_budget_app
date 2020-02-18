@@ -18,17 +18,23 @@ class ExpensesController < ApplicationController
   end
   
   get '/expenses/:id' do
-    @expense = Expense.find(params[:id])
+    set_expense
     erb :'/expenses/show'
   end
   
   get '/expenses/:id/edit' do
-    @expense = Expense.find(params[:id])
+    set_expense
     erb :'/expenses/edit'
   end
   
   patch '/expenses/:id' do
     "Hello, World!"
+  end
+  
+  private
+  
+  def set_expense
+    @expense = Expense.find(params[:id])
   end
   
 end
