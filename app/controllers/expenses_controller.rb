@@ -24,7 +24,15 @@ class ExpensesController < ApplicationController
   
   get '/expenses/:id/edit' do
     set_expense
-    erb :'/expenses/edit'
+    if is_logged_in?
+      if @expense.user == current_user
+        erb :'/expenses/edit'
+      else
+        redirect to "/users/#{current_user.id}"
+      end
+    else
+      redirect '/'
+    end
   end
   
   patch '/expenses/:id' do
