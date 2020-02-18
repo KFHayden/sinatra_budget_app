@@ -10,7 +10,8 @@ class ExpensesController < ApplicationController
       redirect to '/'
     end
     if params[:category] != ""
-      @expense = Expense.create(params)
+      @expense = Expense.create(category: params[:category], user_id: current_user.id)
+      redirect to "/expenses/#{@expense.id}"
     else
       redirect to '/expenses/new'
     end
