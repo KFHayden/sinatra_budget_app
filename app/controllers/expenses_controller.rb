@@ -28,7 +28,9 @@ class ExpensesController < ApplicationController
   end
   
   patch '/expenses/:id' do
-    "Hello, World!"
+    set_expense
+    @expense.update(category: params[:category])
+    redirect to "/expenses/#{@expense.id}"
   end
   
   private
