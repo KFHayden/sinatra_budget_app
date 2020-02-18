@@ -6,6 +6,14 @@ class ExpensesController < ApplicationController
   
   post '/expenses' do
     #create new expenses
+    if !is_logged_in?
+      redirect to '/'
+    end
+    if params[:category] != ""
+      @expense = Expense.create(params)
+    else
+      redirect to '/expenses/new'
+    end
   end
   
   
