@@ -3,6 +3,6 @@
 <form method="POST" action="/expenses/<%= @expense.id %>">
   <input type="hidden" name="_method" value="patch">
   <label for="category">Expense:</label>
-  <input type="textarea" name="category" value="<%= @expense.category %>"><br>
+  <textarea name="category" cols="30"><%= @expense.category %></textarea><br>
   <input type="submit" value="Edit Expense">
 </form>
