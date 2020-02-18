@@ -37,8 +37,16 @@ class ExpensesController < ApplicationController
   
   patch '/expenses/:id' do
     set_expense
-    @expense.update(category: params[:category])
-    redirect to "/expenses/#{@expense.id}"
+    if is_logged_in?
+      if @expense.user == current_user
+        @expense.update(category: params[:category])
+        redirect to "/expenses/#{@expense.id}"
+      else
+        redirect to "/users/#{current_user.id}"
+      end
+    else
+      redirect to '/'
+    end
   end
   
   private
