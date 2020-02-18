@@ -1,1 +1,7 @@
-Hello, World!
+<h3>Expense Edit Page</h3>
+
+<form method="POST" action="/expenses">
+  <label for="category">Expense:</label>
+  <input type="text" name="category" placeholder="<%= @expense.category %>"><br>
+  <input type="submit" value="Edit Expense">
+</form>
