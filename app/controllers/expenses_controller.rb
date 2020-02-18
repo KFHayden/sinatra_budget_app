@@ -22,4 +22,8 @@ class ExpensesController < ApplicationController
     erb :'/expenses/show'
   end
   
+  get '/expenses/:id/edit' do
+    erb :'/expenses/edit'
+  end
+  
 end
