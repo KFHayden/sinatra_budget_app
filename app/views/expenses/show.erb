@@ -1,5 +1,9 @@
 <h3><%= @expense.category %><br></h3>
 
+<% if authorized?(@expense) %>
+
 <p><a href="/expenses/<%= @expense.id %>/edit">Edit</a><br></p>
 
 <!--add delete link-->
+
+<% end %>

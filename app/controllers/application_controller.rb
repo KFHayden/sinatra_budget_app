@@ -24,5 +24,9 @@ class ApplicationController < Sinatra::Base
   def is_logged_in?
     !!current_user
   end
+  
+  def authorized?(expense)
+    expense.user == current_user
+  end
 
 end
