@@ -4,6 +4,12 @@
 
 <p><a href="/expenses/<%= @expense.id %>/edit">Edit</a><br></p>
 
+<p>
+<form action="/expenses/<%= @expense.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
+</p>
 <!--add delete link-->
 
 <% end %>

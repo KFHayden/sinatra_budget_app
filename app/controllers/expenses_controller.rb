@@ -60,7 +60,7 @@ class ExpensesController < ApplicationController
       @expense.destroy
       redirect to '/expenses'
     else
-      
+      redirect to '/expenses'
     end
   end
   
