@@ -1,5 +1,10 @@
 class ExpensesController < ApplicationController
   
+  get '/expenses' do
+    @expenses = Expense.all
+    erb :'/expenses/index'
+  end
+  
   get '/expenses/new' do
     erb :'/expenses/new'
   end
