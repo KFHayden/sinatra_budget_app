@@ -30,7 +30,7 @@ class ExpensesController < ApplicationController
   get '/expenses/:id/edit' do
     set_expense
     if is_logged_in?
-      if @expense.user == current_user
+      if authorized?(@expense)
         erb :'/expenses/edit'
       else
         redirect to "/users/#{current_user.id}"
@@ -43,7 +43,7 @@ class ExpensesController < ApplicationController
   patch '/expenses/:id' do
     set_expense
     if is_logged_in?
-      if @expense.user == current_user
+      if authorized?(@expense)
         @expense.update(category: params[:category])
         redirect to "/expenses/#{@expense.id}"
       else
