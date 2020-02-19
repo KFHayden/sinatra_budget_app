@@ -54,6 +54,16 @@ class ExpensesController < ApplicationController
     end
   end
   
+  delete '/expenses/:id' do
+    set_expense
+    if authorized?(@expense)
+      @expense.destroy
+      redirect to '/expenses'
+    else
+      
+    end
+  end
+  
   private
   
   def set_expense
