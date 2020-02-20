@@ -43,7 +43,7 @@ class ExpensesController < ApplicationController
   patch '/expenses/:id' do
     set_expense
     if is_logged_in?
-      if authorized?(@expense)
+      if authorized?(@expense) && params[:category] != ""
         @expense.update(category: params[:category])
         redirect to "/expenses/#{@expense.id}"
       else
