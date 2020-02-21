@@ -18,6 +18,7 @@ class ExpensesController < ApplicationController
       @expense = Expense.create(category: params[:category], user_id: current_user.id)
       redirect to "/expenses/#{@expense.id}"
     else
+      flash[:message] = "You cannot submit an empty field - Please try again"
       redirect to '/expenses/new'
     end
   end
@@ -47,7 +48,8 @@ class ExpensesController < ApplicationController
         @expense.update(category: params[:category])
         redirect to "/expenses/#{@expense.id}"
       else
-        redirect to "/users/#{current_user.id}"
+        flash[:message] = "Something went wrong - Please try again"
+        redirect to "/expenses/#{@expense.id}"
       end
     else
       redirect to '/'

@@ -7,12 +7,12 @@ class UsersController < ApplicationController
   #create the session
   post '/login' do
     @user = User.find_by(email: params[:email])
-    if @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id #actually logs the user in
       puts session
       redirect to "/users/#{@user.id}"
     else
-      "Your username and/or password are invalid"
+      flash[:message] = "Your username or password was incorrect - Please try again or sign up"
       redirect to '/login'
     end
   end
@@ -28,6 +28,7 @@ class UsersController < ApplicationController
       #or redirect to '/login'
       redirect to "/users/#{@user.id}"
     else
+      flash[:message] = "Please fill out all boxes"
       redirect to '/signup'
       #stretch goal - create an error page or give an error message
     end
