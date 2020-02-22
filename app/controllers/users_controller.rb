@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       puts session
       redirect to "/users/#{@user.id}"
     else
-      flash[:message] = "Your username or password was incorrect - Please try again or sign up"
+      flash[:message] = "There was an error logging in - Please try again or sign up"
       redirect to '/login'
     end
   end
@@ -28,9 +28,8 @@ class UsersController < ApplicationController
       #or redirect to '/login'
       redirect to "/users/#{@user.id}"
     else
-      flash[:message] = "Please fill out all boxes"
+      flash[:message] = "There was an error signing up - Please try again or log in"
       redirect to '/signup'
-      #stretch goal - create an error page or give an error message
     end
   end
   
