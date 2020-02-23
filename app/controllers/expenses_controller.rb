@@ -1,7 +1,7 @@
 class ExpensesController < ApplicationController
   
   get '/expenses' do
-    @expenses = Expense.all
+    @user = current_user
     erb :'/expenses/index'
   end
   

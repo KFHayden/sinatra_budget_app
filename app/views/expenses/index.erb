@@ -1,8 +1,7 @@
 <h3>Your Monthly Expenses</h3>
-<% @expenses.each do |expense| %>
+<% @user.expenses.each do |expense| %>
 <h4><a href="/expenses/<%= expense.id %>"><%= expense.created_at %></a></h4>
 <p><%= expense.category %></p>
-<h6>By <%= expense.user.name %></h6>
 <br>
 <% end %>
 <!-- FIND OUT WHY THIS WON'T LINK TO THE SHOW PAGE -->
