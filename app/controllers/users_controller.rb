@@ -23,13 +23,13 @@ class UsersController < ApplicationController
   end
   
   post '/users' do
-    if params[:name] != "" && params[:email] != "" && params[:password] != ""
-      @user = User.create(params)
+    @user = User.new(params)
+    if @user.save
       session[:user_id] = @user.id
       flash[:message] = "Welcome, #{@user.name}!"
       redirect to "/users/#{@user.id}"
     else
-      flash[:errors] = "There was an error signing up - Please try again or log in"
+      flash[:errors] = "There was an error signing up - #{@user.errors.full_messages.to_sentence}"
       redirect to '/signup'
     end
   end
