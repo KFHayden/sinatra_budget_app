@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       #or redirect to '/login'
       redirect to "/users/#{@user.id}"
     else
-      flash[:message] = "There was an error signing up - Please try again or log in"
+      flash[:errors] = "There was an error signing up - Please try again or log in"
       redirect to '/signup'
     end
   end
