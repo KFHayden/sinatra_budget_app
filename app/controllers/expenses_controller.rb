@@ -12,6 +12,7 @@ class ExpensesController < ApplicationController
   post '/expenses' do
     #create new expenses
     if !is_logged_in?
+      flash[:errors] = "Please log in and try again"
       redirect to '/'
     end
     if params[:category] != ""
