@@ -16,6 +16,7 @@ class ExpensesController < ApplicationController
       redirect to '/'
     end
     if params[:category] != ""
+      flash[:message] = "Success!"
       @expense = Expense.create(category: params[:category], user_id: current_user.id)
       redirect to "/expenses/#{@expense.id}"
     else
