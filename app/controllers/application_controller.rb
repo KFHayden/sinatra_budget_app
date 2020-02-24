@@ -29,5 +29,12 @@ class ApplicationController < Sinatra::Base
   def authorized?(expense)
     expense.user == current_user
   end
+  
+  def redirect_if_not_logged_in
+    if !is_logged_in?
+      flash[:errors] = "Please log in and try again"
+      redirect to '/'
+    end
+  end
 
 end

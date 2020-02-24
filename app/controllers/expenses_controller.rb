@@ -10,11 +10,7 @@ class ExpensesController < ApplicationController
   end
   
   post '/expenses' do
-    #create new expenses
-    if !is_logged_in?
-      flash[:errors] = "Please log in and try again"
-      redirect to '/'
-    end
+    redirect_if_not_logged_in
     if params[:category] != ""
       flash[:message] = "Success!"
       @expense = Expense.create(category: params[:category], user_id: current_user.id)
@@ -32,29 +28,23 @@ class ExpensesController < ApplicationController
   
   get '/expenses/:id/edit' do
     set_expense
-    if is_logged_in?
-      if authorized?(@expense)
-        erb :'/expenses/edit'
-      else
-        redirect to "/users/#{current_user.id}"
-      end
+    redirect_if_not_logged_in
+    if authorized?(@expense)
+      erb :'/expenses/edit'
     else
-      redirect '/'
+      redirect to "/users/#{current_user.id}"
     end
   end
   
   patch '/expenses/:id' do
     set_expense
-    if is_logged_in?
-      if authorized?(@expense) && params[:category] != ""
-        @expense.update(category: params[:category])
-        redirect to "/expenses/#{@expense.id}"
-      else
-        flash[:errors] = "Something went wrong - Please try again"
-        redirect to "/expenses/#{@expense.id}"
-      end
+    redirect_if_not_logged_in
+    if authorized?(@expense) && params[:category] != ""
+      @expense.update(category: params[:category])
+      redirect to "/expenses/#{@expense.id}"
     else
-      redirect to '/'
+      flash[:errors] = "Something went wrong - Please try again"
+      redirect to "/expenses/#{@expense.id}"
     end
   end
   
