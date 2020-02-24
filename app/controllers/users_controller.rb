@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       puts session
       redirect to "/users/#{@user.id}"
     else
-      flash[:message] = "There was an error logging in - Please try again or sign up"
+      flash[:errors] = "There was an error logging in - Please try again or sign up"
       redirect to '/login'
     end
   end

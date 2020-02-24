@@ -18,7 +18,7 @@ class ExpensesController < ApplicationController
       @expense = Expense.create(category: params[:category], user_id: current_user.id)
       redirect to "/expenses/#{@expense.id}"
     else
-      flash[:message] = "Something went wrong - Please try again"
+      flash[:errors] = "Something went wrong - Please try again"
       redirect to '/expenses/new'
     end
   end
@@ -48,7 +48,7 @@ class ExpensesController < ApplicationController
         @expense.update(category: params[:category])
         redirect to "/expenses/#{@expense.id}"
       else
-        flash[:message] = "Something went wrong - Please try again"
+        flash[:errors] = "Something went wrong - Please try again"
         redirect to "/expenses/#{@expense.id}"
       end
     else
