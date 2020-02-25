@@ -1,6 +1,6 @@
 <h3>Your Monthly Expenses</h3>
 <% @user.expenses.each do |expense| %>
 <h4><a href="/expenses/<%= expense.id %>"><%= expense.created_at %></a></h4>
-<p><%= expense.category %></p>
+<p><%= expense.category %> - <%= expense.cost %></p> 
 <br>
 <% end %>

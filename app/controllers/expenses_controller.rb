@@ -13,7 +13,7 @@ class ExpensesController < ApplicationController
     redirect_if_not_logged_in
     if params[:category] != ""
       flash[:message] = "Success!"
-      @expense = Expense.create(category: params[:category], user_id: current_user.id)
+      @expense = Expense.create(category: params[:category],cost: params[:cost], user_id: current_user.id)
       redirect to "/expenses/#{@expense.id}"
     else
       flash[:errors] = "Something went wrong - Please try again"
@@ -40,7 +40,7 @@ class ExpensesController < ApplicationController
     set_expense
     redirect_if_not_logged_in
     if authorized?(@expense) && params[:category] != ""
-      @expense.update(category: params[:category])
+      @expense.update(category: params[:category], cost: params[:cost])
       redirect to "/expenses/#{@expense.id}"
     else
       flash[:errors] = "Something went wrong - Please try again"
