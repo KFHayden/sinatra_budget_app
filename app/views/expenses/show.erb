@@ -1,4 +1,4 @@
-<h3><%= @expense.category %> - $<%= @expense.cost %><br></h3>
+<h3><%= @expense.category %> - $<%= sprintf('%.2f', @expense.cost) %><br></h3>
 
 <% if authorized?(@expense) %>
 
