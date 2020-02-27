@@ -1,6 +1,8 @@
 <h3>Your Monthly Expenses</h3>
 <% @user.expenses.each do |expense| %>
-<h4><a href="/expenses/<%= expense.id %>"><%= expense.created_at %></a></h4>
-<p><%= expense.category %> - $<%= sprintf('%.2f', expense.cost).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></p> 
+<h4>
+  <a href="/expenses/<%= expense.id %>">
+    <%= expense.category %></a> - $<%= sprintf('%.2f', expense.cost).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %>
+</h4>
 <br>
 <% end %>
