@@ -1,6 +1,6 @@
-<h3><%= @expense.category %> - $<%= sprintf('%.2f', @expense.cost).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\1,').reverse %><br></h3>
+<h3><%= @expense.category %> - $<%= sprintf('%.2f', @expense.cost).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\1,').reverse %></h3>
 <!-- Converts cost into string, reverses said string, adds a comma after every 3 digits that is followed by another digit, re-reverses string -->
-
+<h5> Created On <%=@expense.created_at.strftime("%A, %d %b %Y") %></h5><br>
 <% if authorized?(@expense) %>
 
 <p><a href="/expenses/<%= @expense.id %>/edit">Edit</a><br></p>
