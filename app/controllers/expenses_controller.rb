@@ -13,7 +13,7 @@ class ExpensesController < ApplicationController
     redirect_if_not_logged_in
     if params[:category] != "" && params[:cost] != ""
       flash[:message] = "Success!"
-      @expense = Expense.create(category: params[:category],cost: params[:cost], user_id: current_user.id)
+      @expense = Expense.create(category: params[:category],cost: params[:cost].to_s, user_id: current_user.id)
       redirect to "/expenses/#{@expense.id}"
     else
       flash[:errors] = "Something went wrong - Please be sure to fill out all fields"
