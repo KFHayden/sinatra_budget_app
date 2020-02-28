@@ -3,7 +3,7 @@ MVP: This will be a budget app that allows for users to log in to see their own 
 <p>Welcome to my Sinatra budget app! This simple web app allows the user to create an account into order to keep track of their monthly expenses. Once logged in, the user will be able to add new expenses, delete existing ones, or update the cost and name of each expense.</p>
 
 <h2>Getting Started</h2>
-<p>In order to get started with the Sinatra Budget App, simply clone the git repository here <a href=https://github.com/KFHayden/sinatra_budget_app>
+<p>In order to get started with the Sinatra Budget App, simply clone the git repository <a href="https://github.com/KFHayden/sinatra_budget_app">here</a>
 TODO: Update formatting throughout to mimprove user experience.
 
 <!-- Describe the app and what it does/how to use it/app features -->
