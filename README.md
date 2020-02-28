@@ -6,8 +6,8 @@ MVP: This will be a budget app that allows for users to log in to see their own 
 <p>In order to get started with the Sinatra Budget App, simply clone the git repository <a href="https://github.com/KFHayden/sinatra_budget_app">here</a> into your terminal. Once the program loads, change directory to the proper folder with "cd sinatra_budget_app" and run bundle to install the appropriate gems. From here, type "shotgun" into your terminal, go to the address the server is running at and begin!</p>
 
 <h2>Built With</h2>
-<ul>Sinatra - Web framework used
-Corneal - Gem used to layout</ul>
+<p>Sinatra - Web framework used</p>
+<p>Corneal - Gem used to layout</p>
 
 <!-- Describe the app and what it does/how to use it/app features -->
 
