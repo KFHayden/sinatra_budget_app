@@ -1,4 +1,3 @@
-MVP: This will be a budget app that allows for users to log in to see their own budget that they have created, with their own expenses that they create and edit.
 <h1>Sinatra Budget App</h1>
 <p>Welcome to my Sinatra budget app! This simple web app allows the user to create an account into order to keep track of their monthly expenses. Once logged in, the user will be able to add new expenses, delete existing ones, or update the cost and name of each expense.</p>
 
