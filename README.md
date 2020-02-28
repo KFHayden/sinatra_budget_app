@@ -9,8 +9,11 @@ MVP: This will be a budget app that allows for users to log in to see their own 
 <p>Sinatra - Web framework used</p>
 <p>Corneal - Gem used to layout</p>
 
-<!-- Describe the app and what it does/how to use it/app features -->
+<h2>Contributing</h2>
+<!-- Last TODO -->
 
-<!-- MIT LICENSE: Either link straight to it or copy paste it -->
+<h2>Author</h2>
+<p>Kevin Hayden</p>
 
-<!-- Change copyright info in MIT License copy-paste to <2020> KFHayden(github username) -->
+<h2>License</h2>
+<p>This project is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a></p>
